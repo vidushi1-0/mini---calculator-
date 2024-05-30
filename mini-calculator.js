@@ -3,7 +3,7 @@ alert("This calculator can perform addition , subtraction , modulation , multipl
 let main_button = document.querySelectorAll(".main-buttons");
 let msg = document.querySelector(".enter-digit");
 let acBtn = document.querySelector("#ac");
-let del = document.querySelector("#del");
+let del = document.querySelector(".del");
 let equal = document.querySelector(".equalto");
 let operator = document.querySelectorAll(".op");
 
@@ -11,7 +11,7 @@ let currentInput;
 
 main_button.forEach((button) => {
     button.addEventListener("click" , () => {
-        if(button === "=" || button === "AC" || button === "DEL" || button === "00" || button === "0") {
+        if(button === "=" || button === "AC" || button === "00" || button === "0") {
             msg.innerText = "";
         }
         else {
@@ -31,10 +31,10 @@ equal.addEventListener("click" , () => {
             operator = "+";
         } else if (currentInput.includes("-")) {
             operator = "-";
-        } else if (currentInput.includes("*")) {
-            operator = "*";
-        } else if (currentInput.includes("/")) {
-            operator = "/";
+        } else if (currentInput.includes("x")) {
+            operator = "x";
+        } else if (currentInput.includes("÷")) {
+            operator = "÷";
         } else if (currentInput.includes("%")) {
             operator = "%";
         }
@@ -51,14 +51,14 @@ equal.addEventListener("click" , () => {
             case "-":
                 result = firstNum - secondNum;
                 break;
-            case "*":
+            case "x":
                 result = firstNum * secondNum;
                 break;
-            case "/":
+            case "÷":
                 result = firstNum / secondNum;
                 break;
             case "%":
-                result = firstNum % secondNum;
+                result = firstNum / secondNum *100;
                 break;
         }
 
@@ -71,8 +71,9 @@ equal.addEventListener("click" , () => {
 
 });
 
-del.addEventListener("click" , () => {
-    msg.innerText = msg.innerText.slice(0,-4);
+del.addEventListener("click", () => {
+    msg.innerText = msg.innerText.slice(0, -1); 
+    currentInput = msg.innerText; 
 });
 
 acBtn.addEventListener("click" , () => {
