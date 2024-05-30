@@ -39,8 +39,9 @@ body {
     width: 70px;
     border-radius: 50%;
     border: none;
-    font-size: large;
+    font-size: 25px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .enter-digit {
@@ -65,9 +66,14 @@ body {
 
 @media (max-width:500px) and (min-width:300px) {
     .calculator {
-        gap: 5px;
+        gap: 7px;
         width: 300px;
         margin-top: 10px;
+    }
+
+    .main-buttons {
+        width: 60px;
+        height: 60px;
     }
 
     h1 {
