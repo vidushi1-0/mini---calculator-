@@ -1,5 +1,5 @@
 alert("Welcome to mini-calculator!");
-alert("This calculator can perform addition , subtraction , modulation , multiplication , division. Thank You!");
+alert("This calculator can perform addition , subtraction , percentage , multiplication , division. Thank You!");
 let main_button = document.querySelectorAll(".main-buttons");
 let msg = document.querySelector(".enter-digit");
 let acBtn = document.querySelector("#ac");
@@ -58,12 +58,7 @@ equal.addEventListener("click" , () => {
                 result = firstNum / secondNum;
                 break;
             case "%":
-                if(secondNum === 0) {
-                    result = firstNum / 100;
-                }
-                else {
-                    result = ( firstNum / secondNum ) * 100;
-                }
+                result = firstNum / secondNum * 100;
                 break;
         }
 
