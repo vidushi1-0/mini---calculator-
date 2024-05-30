@@ -58,7 +58,12 @@ equal.addEventListener("click" , () => {
                 result = firstNum / secondNum;
                 break;
             case "%":
-                result = firstNum / secondNum *100;
+                if(secondNum === 0) {
+                    result = firstNum / 100;
+                }
+                else {
+                    result = ( firstNum / secondNum ) * 100;
+                }
                 break;
         }
 
